@@ -1,16 +1,28 @@
 package queue;
 
+import java.util.Arrays;
+
 public class PriorityQueueIpm {
 
 
     public static void main(String[] args) {
-        PriorityQueueIpm priorityQueueIpm = new PriorityQueueIpm();
-        PriorityQueueIpm.Node N = newNode(4,3);
-        System.out.println((N).data);
-        System.out.println(N.data);
+//        PriorityQueueIpm priorityQueueIpm = new PriorityQueueIpm();
+        // Create a Priority Queue
+        // 7.4.5.6
+        Node pq = newNode(4, 1);
+        pq =push(pq, 5, 2);
+        pq =push(pq, 6, 3);
+        pq =push(pq, 7, 0);
+
+        System.out.println();
+
+        while (isEmpty(pq)==0) {
+            System.out.printf("%d is the header pointer", peek(pq));
+            pq=pop(pq);
+        }
     }
 
-        Node n = new Node();
+//        Node n = new Node();
 
     static class Node {
         int data;
@@ -63,6 +75,11 @@ public class PriorityQueueIpm {
           start.next = temp;
         }
         return head;
+    }
+//    check if the collection is empty
+    static int isEmpty(Node head){
+        return (head== null)? 1 :0;
+
     }
 
 
